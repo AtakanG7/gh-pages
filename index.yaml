@@ -3,31 +3,31 @@ entries:
   database:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-09-12T22:57:24.709185962+03:00"
+    created: "2024-09-12T23:26:06.687300254+03:00"
     description: A Helm chart for the database
     digest: 33693eca39400bb86d90602ae63f90d80c55b79e9f4578a11066d95f501db9dc
     name: database
     urls:
-    - atakang7.github.io/gh-pages/database-1.0.0.tgz
+    - https://atakang7.github.io/gh-pages/docs/docs/database-1.0.0.tgz
     version: 1.0.0
   web-app:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-09-12T22:57:24.709428525+03:00"
+    created: "2024-09-12T23:26:06.687539985+03:00"
     description: A Helm chart for the web application
     digest: 788e71ce9dcacaaac30c329e4bb46ae733c68c4e3f8f5bb1f679c6673110f4cc
     name: web-app
     urls:
-    - atakang7.github.io/gh-pages/web-app-0.1.0.tgz
+    - https://atakang7.github.io/gh-pages/docs/docs/web-app-0.1.0.tgz
     version: 0.1.0
   worker:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-09-12T22:57:24.709628357+03:00"
+    created: "2024-09-12T23:26:06.687740386+03:00"
     description: A Helm chart for the worker application
     digest: d8bd274a70234ff22fa44cc4fd01634cf671294a3d6d6e8c36531d62436e8240
     name: worker
     urls:
-    - atakang7.github.io/gh-pages/worker-0.1.0.tgz
+    - https://atakang7.github.io/gh-pages/docs/docs/worker-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-12T22:57:24.708878475+03:00"
+generated: "2024-09-12T23:26:06.686932842+03:00"
