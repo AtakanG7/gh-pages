@@ -14,8 +14,3 @@ ingress:
   hosts:
     - host: database-service
       paths: ["/"]
-
-database:
-  host: "database-service"
-  port: "27017"
-  name: "mydatabase"
