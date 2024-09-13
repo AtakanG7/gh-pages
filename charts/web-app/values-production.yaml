@@ -1,5 +1,5 @@
 replicaCount: 1
-host: web-app-service-staging
+host: web-app-service
 namespace: staging
 
 image:
