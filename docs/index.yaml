@@ -1,0 +1,42 @@
+apiVersion: v1
+entries:
+  database:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-09-13T00:40:44.382893243Z"
+    description: A Helm chart for the database
+    digest: 33693eca39400bb86d90602ae63f90d80c55b79e9f4578a11066d95f501db9dc
+    name: database
+    urls:
+    - database-1.0.0.tgz
+    version: 1.0.0
+  web-app:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-09-13T00:40:44.383449058Z"
+    description: A Helm chart for the web application :)
+    digest: fbba81426b0c68ea199dcf6615a69aa5f6593f3e79dd7a8877097d8926c0e107
+    name: web-app
+    urls:
+    - web-app-0.1.14.tgz
+    version: 0.1.14
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-09-13T00:40:44.383087992Z"
+    description: A Helm chart for the web application
+    digest: 788e71ce9dcacaaac30c329e4bb46ae733c68c4e3f8f5bb1f679c6673110f4cc
+    name: web-app
+    urls:
+    - web-app-0.1.0.tgz
+    version: 0.1.0
+  worker:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-09-13T00:40:44.383815181Z"
+    description: A Helm chart for the worker application
+    digest: d8bd274a70234ff22fa44cc4fd01634cf671294a3d6d6e8c36531d62436e8240
+    name: worker
+    urls:
+    - worker-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-09-13T00:40:44.382614568Z"
