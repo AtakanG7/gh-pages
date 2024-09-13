@@ -2,3 +2,9 @@ replicaCount: 1
 
 image:
   tag: "1.0.0"
+
+
+database:
+  host: "database-service-staging"
+  port: "27017"
+  name: "mydatabase"
