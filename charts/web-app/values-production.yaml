@@ -7,3 +7,9 @@ ingress:
   hosts:
     - host: web-app.mycompany.com
       paths: ["/"]
+
+
+database:
+  host: "database-service"
+  port: "27017"
+  name: "mydatabase"
