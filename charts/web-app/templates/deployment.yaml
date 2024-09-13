@@ -24,3 +24,16 @@ spec:
               value: {{ .Values.database.port | quote }}
             - name: DB_NAME
               value: {{ .Values.database.name | quote }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.host }}
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: {{ .Values.host }}
+  ports:
+    - protocol: TCP
+      port: 3004
+      targetPort: 3004
