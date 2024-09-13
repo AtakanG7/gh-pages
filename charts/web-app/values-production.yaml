@@ -3,7 +3,7 @@ host: web-app-service
 namespace: staging
 
 image:
-  tag: 0.1.18
+  tag: 0.1.19
 
 ingress:
   enabled: true
