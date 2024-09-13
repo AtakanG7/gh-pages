@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: database-service
+  name: {{ .Values.service.name }} 
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -37,12 +37,12 @@ data:
 apiVersion: v1
 kind: Service
 metadata:
-  name: database-service
-  namespace: production
+  name: {{ .Values.service.name }}  # Fetch service name from Values
+  namespace: {{ .Release.Namespace }}  # Use the release namespace
 spec:
   selector:
     app: database
   ports:
     - protocol: TCP
-      port: 27017
-      targetPort: 27017
+      port: {{ .Values.service.port }}  # Fetch port from Values
+      targetPort: {{ .Values.service.port }}
