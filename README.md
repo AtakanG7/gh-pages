@@ -1,64 +1,79 @@
-# Helm Chart Operations for CI/CD
+# Helm Charts
 
-Here are some common Helm operations you might use in a CI/CD pipeline:
+This repository hosts a curated set of Helm charts for deploying applications to Kubernetes clusters. It serves as a Helm chart repository via GitHub Pages at **[helm.atakangul.com](https://helm.atakangul.com)**.
 
-1. **Add your Helm repository**
-   ```bash
-   helm repo add myrepo https://yourusername.github.io/your-repo-name/
-   ```
+## Available Charts
 
-2. **Update the repository**
-   ```bash
-   helm repo update
-   ```
+| Chart | Description | Latest Version |
+|-------|-------------|----------------|
+| `web-app` | Web application deployment chart with staging/production value overlays | `0.1.42` |
+| `database` | Database deployment chart | `1.0.0` |
+| `worker` | Background worker application chart | `0.1.0` |
 
-3. **Search for charts in your repository**
-   ```bash
-   helm search repo myrepo
-   ```
+Each chart supports environment-specific values via `values-staging.yaml` and `values-production.yaml` overlays.
 
-4. **Install a chart**
-   ```bash
-   helm install my-release myrepo/chart-name
-   ```
+## Usage
 
-5. **Upgrade a release**
-   ```bash
-   helm upgrade my-release myrepo/chart-name
-   ```
+### Add the repository
 
-6. **Rollback a release**
-   ```bash
-   helm rollback my-release 1
-   ```
+```bash
+helm repo add atakangul https://helm.atakangul.com
+helm repo update
+```
 
-7. **Uninstall a release**
-   ```bash
-   helm uninstall my-release
-   ```
+### Search for available charts
 
-8. **List all releases**
-   ```bash
-   helm list
-   ```
+```bash
+helm search repo atakangul
+```
 
-9. **Get release status**
-   ```bash
-   helm status my-release
-   ```
+### Install a chart
 
-10. **Get release history**
-    ```bash
-    helm history my-release
-    ```
+```bash
+# Install the web-app chart with staging values
+helm install my-web-app atakangul/web-app -f values-staging.yaml
 
-11. **Package a chart**
-    ```bash
-    helm package ./charts/my-chart
-    ```
+# Install the database chart
+helm install my-db atakangul/database
+```
 
-12. **Lint a chart**
-    ```bash
-    helm lint ./charts/my-chart
-    ```
+### Deploy a specific environment
 
+```bash
+helm install my-web-app atakangul/web-app \
+  --values values-production.yaml \
+  --namespace production
+```
+
+## Chart Development
+
+Charts are maintained under `charts/` with packaged releases published to `docs/`. The `docs/` directory contains the Helm repository index and all packaged `.tgz` releases, served automatically via GitHub Pages.
+
+### Package and update the index
+
+```bash
+# Package a chart
+helm package charts/web-app -d docs/
+
+# Regenerate the repository index
+helm repo index docs/ --url https://helm.atakangul.com
+```
+
+### Lint a chart
+
+```bash
+helm lint ./charts/web-app
+```
+
+## Repository Structure
+
+```
+.
+├── charts/          # Chart source files
+│   ├── database/    # Database deployment chart
+│   ├── web-app/     # Web application chart
+│   └── worker/      # Worker application chart
+├── docs/            # GitHub Pages content (Helm repo index + packaged charts)
+├── CNAME            # Custom domain configuration
+└── README.md
+```
